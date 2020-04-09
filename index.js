@@ -30,8 +30,8 @@ app.post('/start', (request, response) => {
   // Response data
   const data = {
     color: '#888888',
-    headType: "regular",
-    tailType: "regular"
+    headType: "tonque",
+    tailType: "bolt"
   }
 
   return response.json(data)
@@ -47,6 +47,8 @@ app.post('/move', (request, response) => {
   possible_moves = ["up", "down", "left", "right"]
   var choice = Math.floor(Math.random() * possible_moves.length);
   var snake_move = possible_moves[choice];
+
+  snake_move = "up";
 
   console.log("MOVE: " + snake_move);
   return response.json({ move: snake_move })
